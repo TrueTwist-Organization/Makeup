@@ -1,0 +1,262 @@
+:root {
+  --primary-makeup: #E63946;
+  --secondary-makeup: #FF4D6D;
+  --highlight-pink: #FF758F;
+  --deep-red: #800F2F;
+  --accent-makeup: #FFB3C1;
+  
+  --primary-face: #FF9A8B;
+  --primary-eye: #B721FF;
+  --primary-skincare: #84fab0;
+  
+  --bg-gradient: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/hero-bg.png');
+  
+  --text-main: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-family: 'Urbanist', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.premium-text {
+  animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+.highlight {
+  color: var(--highlight-pink);
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 117, 143, 0.2);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.btn {
+  padding: 1.2rem 2.8rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--transition-smooth);
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.btn-primary {
+  background: #FFFFFF;
+  color: var(--deep-red);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: var(--highlight-pink);
+  color: #FFFFFF;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 117, 143, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #FFFFFF;
+  transform: translateY(-3px);
+}
+
+/* Makeup Smudge Textures */
+.text-lips {
+  background: linear-gradient(90deg, #FF1F6D 0%, #A4133C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 950;
+  letter-spacing: -0.05em;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+.text-gold {
+  background: linear-gradient(90deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 5px 25px rgba(179, 135, 40, 0.5));
+  animation: shimmer 4s linear infinite;
+  font-weight: 950;
+}
+
+.text-face {
+  background: linear-gradient(135deg, #FFDAB9 0%, #E6B9A6 30%, #D2B48C 60%, #FFE4E1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 5px 15px rgba(210, 180, 140, 0.3));
+}
+
+.text-eye {
+  background: linear-gradient(135deg, #1a1a1a 0%, #444 30%, #000 60%, #333 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+  animation: shimmer 3s linear infinite;
+}
+
+.text-skincare {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 30%, #fff 60%, #84fab0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 5px 15px rgba(132, 250, 176, 0.3));
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(0.1deg); }
+  75% { transform: translateY(5px) rotate(-0.1deg); }
+}
+
+@keyframes smudge {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+  50% { transform: scale(1.1) rotate(1deg); opacity: 0.6; }
+}
+
+.text-wave {
+  animation: wave 4s ease-in-out infinite;
+  display: inline-block;
+}
+
+.footer {
+  margin: 4rem auto 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  width: calc(100% - 4rem);
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .nav-links { display: none !important; }
+  .mobile-only { display: block !important; }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .footer {
+    margin: 2rem 1rem;
+    padding: 3rem 1.5rem;
+    width: calc(100% - 2rem);
+  }
+  
+  h1 { font-size: clamp(2.5rem, 12vw, 3.5rem) !important; }
+  h2 { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
+  h3 { font-size: 1.5rem !important; }
+  
+  .glass-card { padding: 1rem; border-radius: 16px; }
+  .navbar-logo-text { font-size: 1.6rem !important; }
+  .hero-3d-container { display: none; }
+  .btn { padding: 0.8rem 1.5rem; font-size: 0.8rem; letter-spacing: 0.05em; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2.2rem !important; }
+  .navbar-logo-text { font-size: 1.3rem !important; }
+  .container { padding: 0 0.75rem; }
+}
