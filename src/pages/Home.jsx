@@ -63,7 +63,7 @@ const Home = () => {
                visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }
              }}
              style={{ 
-               fontSize: 'clamp(3.5rem, 10vw, 7rem)', 
+               fontSize: 'clamp(2.5rem, 15vw, 6rem)', 
                lineHeight: 1, 
                fontWeight: 900, 
                marginBottom: '2rem', 
@@ -191,15 +191,15 @@ const Home = () => {
       </section>
 
       <section className="container" id="categories-section" style={{ marginBottom: 'clamp(5rem, 15vw, 10rem)' }}>
-         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '4rem' }}>
+         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
             <motion.div
-              animate={{ y: [0, -12, 0] }}
+              animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <WaveText 
                 text="Shop By Category" 
                 style={{ 
-                  fontSize: '3.5rem', 
+                  fontSize: 'clamp(2rem, 10vw, 3.5rem)', 
                   fontWeight: 900, 
                   textAlign: 'center',
                   color: 'var(--highlight-pink)',
@@ -219,16 +219,16 @@ const Home = () => {
       <section className="container" id="products-section">
          <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', marginBottom: '5rem' }}>
           <motion.div
-            animate={{ y: [0, -15, 0] }}
+            animate={{ y: [0, -10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
           >
             <WaveText 
               text="Featured Collection" 
               style={{ 
-                fontSize: '4.5rem', 
+                fontSize: 'clamp(2rem, 12vw, 4rem)', 
                 fontWeight: 950, 
                 textAlign: 'center', 
-                marginBottom: '1.5rem',
+                marginBottom: '1rem',
                 color: 'var(--primary-face)',
                 textShadow: '0 0 25px rgba(255, 154, 139, 0.3)'
               }} 
@@ -261,7 +261,7 @@ const Home = () => {
 
       {/* Featured Section */}
       <section style={{ marginTop: 'clamp(5rem, 15vw, 10rem)', padding: 'clamp(4rem, 10vw, 8rem) 0', background: 'rgba(0,0,0,0.2)' }}>
-         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
                <h2 style={{ fontSize: '3.5rem', marginBottom: '2.5rem', fontWeight: 900 }}>Why <span style={{ background: 'linear-gradient(90deg, #FFB3C1, #FF758F)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Glowelle?</span></h2>
                <div style={{ display: 'grid', gap: '2.5rem' }}>

@@ -151,8 +151,8 @@ const ProductDetail = () => {
 
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
-          gap: '5rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+          gap: 'clamp(2rem, 8vw, 5rem)',
           alignItems: 'start'
         }}>
           {/* Product Image Section */}
@@ -205,7 +205,7 @@ const ProductDetail = () => {
               {product.category}
             </div>
 
-            <h1 style={{ fontSize: '3.5rem', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.1 }}>{product.name}</h1>
+            <h1 style={{ fontSize: 'clamp(2rem, 10vw, 3.5rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.1 }}>{product.name}</h1>
             
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2.5rem' }}>
                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 700, fontSize: '1.1rem' }}>
@@ -239,43 +239,46 @@ const ProductDetail = () => {
                   <button onClick={() => setQuantity(quantity + 1)} style={{ border: 'none', background: 'transparent', fontSize: '1.5rem', cursor: 'pointer' }}>+</button>
                </div>
                
-                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <button 
                     onClick={handleAddToCart} 
                     style={{ 
+                      flex: 1,
+                      minWidth: '200px',
                       background: addedToCart ? '#22c55e' : 'transparent', 
-                      border: 'none', 
+                      border: '2px solid var(--primary-makeup)', 
                       color: addedToCart ? 'white' : 'var(--primary-makeup)', 
-                      fontSize: '1.2rem', 
+                      fontSize: '1.1rem', 
                       fontWeight: 800, 
                       cursor: 'pointer', 
                       display: 'flex', 
                       alignItems: 'center', 
+                      justifyContent: 'center',
                       gap: '0.8rem',
-                      padding: addedToCart ? '0.8rem 1.5rem' : '0',
+                      padding: '0.8rem 1.5rem',
                       borderRadius: '100px',
                       transition: 'all 0.3s ease'
                     }}
                   >
-                    {addedToCart ? 'ADDED!' : 'ADD TO CART'} <ShoppingCart size={24} />
+                    {addedToCart ? 'ADDED!' : 'ADD TO CART'} <ShoppingCart size={22} />
                   </button>
 
-                  <div style={{ display: 'flex', gap: '1rem', borderLeft: '1px solid #eee', paddingLeft: '2rem' }}>
+                  <div style={{ display: 'flex', gap: '1rem', borderLeft: '1px solid #eee', paddingLeft: '1.5rem' }}>
                     <motion.div 
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={handleWishlist}
-                      style={{ padding: '0.6rem', color: isWishlisted ? 'var(--highlight-pink)' : 'var(--text-main)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+                      style={{ padding: '0.5rem', color: isWishlisted ? 'var(--highlight-pink)' : 'var(--text-main)', cursor: 'pointer' }}
                     >
-                      <Heart size={26} fill={isWishlisted ? 'var(--highlight-pink)' : 'none'} />
+                      <Heart size={24} fill={isWishlisted ? 'var(--highlight-pink)' : 'none'} />
                     </motion.div>
                     <motion.div 
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={handleShare}
-                      style={{ padding: '0.6rem', color: 'var(--text-main)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+                      style={{ padding: '0.5rem', color: 'var(--text-main)', cursor: 'pointer' }}
                     >
-                      <Share2 size={26} />
+                      <Share2 size={24} />
                     </motion.div>
                   </div>
                 </div>
